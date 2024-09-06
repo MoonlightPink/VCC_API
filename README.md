@@ -6,7 +6,7 @@
 VCClient v.2.0.55-alpha以降  
 https://github.com/w-okada/voice-changer/tree/v.2
 
-Voicemeeterは、VoicemeeterでもBananaでもPotatoでも、VBANが使えればどれでも使用可能です。（Virtual Audio Cable不可）  
+Voicemeeterは、VoicemeeterでもBananaでもPotatoでも、VBANが使えればどれでも使用可能です。エフェクト等を使わないならVoicemeeterが一番シンプルでおすすめです。（Virtual Audio Cable不可）  
 https://vb-audio.com/Voicemeeter/
 
 ![Flowchart](Documents/Flowchart.png)
@@ -15,7 +15,7 @@ https://vb-audio.com/Voicemeeter/
 
 インストールとアンインストールについて
 
-年月日_VCC_API.zip をダウンロードして展開し、VCC_API_Setup.exe で初期設定を済ませた後に、VCC_API.exe を実行してください。
+20240906_VCC_API.zip をダウンロードして展開し、VCC_API_Setup.exe で初期設定を済ませた後に、VCC_API.exe を実行してください。
 
 レジストリなどは使用していませんので、アンインストールは展開したファイルを削除するだけでOKです。
 
@@ -51,7 +51,7 @@ VCClientのIPアドレス設定
 2PC構成の時は、IPアドレスを調べて入力してください。  
 1PC構成の時は 127.0.0.1 でOKです。
 
-VCC_API.exeの画面に！マーク（びっくりマーク）が不定期に多数表示されたときは、プチノイズが発生していますので、チャンクサイズを大きくしてください。  
+VCC_API.exe の画面に！マーク（びっくりマーク）が不定期に多数表示されたときは、プチノイズが発生していますので、チャンクサイズを大きくしてください。  
 無音判定から3秒後に蓄積遅延リセットするときにも！マークが表示されますが、元々無音状態なので問題ありません。
 
 ---
@@ -85,13 +85,13 @@ Quest Link の設定について
 1. WiFi接続はとても遅延が大きいです。ボイチェンを使うときだけは、Air Link や、Virtual Desktop 等を使わず、USBとLANを使った方がいいかもしれません。
 1. LAN内で他のパソコンが大量にデータ送受信すると、socket.io の遅延のばらつきが大きくなります。速いときも遅いときもあるなーと思ったら、LANカードを増設してクロス…（以下略
 1. 遅延よりもプチノイズや音飛びの方が、より会話を阻害します。チャンクサイズはギリギリを狙わない方が無難です。
-1. ボイチェンするだけ、と思うとCPUは関係なさそうですが、思ったよりもCPUパワーも影響します。i5-10400だと、若干RTX4070Superを持て余してしまう感じでした。
+1. ボイチェンするだけ、と思うとCPUは関係なさそうですが、思ったよりもCPUパワーも影響します。i5-10400だと、RTX4070Superを若干持て余してしまう感じでした。
 
 ---
 
 音が出ないときは1から順に確認してみてください。
 
-1. VCC_API.exe の画面に特段変化がないときは、VCC_API_Setup.exe の「音声入力設定: Device name」を確認してください。
+1. VCC_API.exe の画面に特段変化がないときは、VCC_API_Setup.exe の「音声入力設定: Device name」と「音声入力設定: Threshold level」を確認してください。
 1. VCClientのコンソール画面で、Elapsed Time(sec)が変化しないときは、VCC_API_Setup.exe の「音声変換設定: IP Address」を確認してください。  
 VCClient を「 main.exe cui --https false --no_cui false 」で起動しないと数字が見えないかもしれません。
 1. Voice Meeter の「VIRTUAL INPUT」のレベルゲージが動かないときは、上段の「Voice Meeter の設定について」を確認してください。
