@@ -25,7 +25,7 @@ VCC_API の設定について
 
 ![VCC_API_Settings](Documents/VCC_API_Settings.png)
 
-おそらく変更が必要な点は3カ所です。
+おそらく変更が必要な点は4カ所です。
 
 1. 音声入力設定: Chunk size  
 音声処理単位時間指定（0.05秒未満にはできません）  
@@ -33,6 +33,9 @@ VCC_API の設定について
 小さい方が遅延が少なくなりますが、小さくしすぎてGPUが足りなくなると、逆に遅延が大きくなります。  
 RTX3060Tiで0.25秒位、RTX4070Superで0.15秒位が最小です。  
 VCClientのベンチマークで大雑把な数値を調べることが出来ます。
+
+1. 音声入力設定: Device name  
+音声入力デバイス指定  
 
 1. 音声入力設定: Threshold level  
 音声入力の無音判定レベル指定  
@@ -79,6 +82,16 @@ Quest Link の設定について
 1. LAN内で他のパソコンが大量にデータ送受信すると、socket.io の遅延のばらつきが大きくなります。速いときも遅いときもあるなーと思ったら、LANカードを増設してクロス…（以下略
 1. 遅延よりもプチノイズや音飛びの方が、より会話を阻害します。チャンクサイズはギリギリを狙わない方が無難です。
 1. ボイチェンするだけ、と思うとCPUは関係なさそうですが、思ったよりもCPUパワーも影響します。i5-10400だと、若干RTX4070Superを持て余してしまう感じでした。
+
+---
+
+音が出ないときは1から順に確認してみてください。
+
+1. VCC_API.exe の画面に特段変化がないなら、VCC_API_Setup.exe の「音声入力設定: Device name」を確認してください。
+1. VCClientのコンソール画面で、Elapsed Time(sec)が変化しないなら、VCC_API_Setup.exe の「音声変換設定: IP Address」を確認してください。  
+	VCClient を「main.exe cui --https false --no_cui false」で起動しないと数字が見えないかもしれません。
+1. VCClientのコンソール画面で、Elapsed Time(sec)が変化しないなら、VCC_API_Setup.exe の「音声変換設定: IP Address」を確認してください。  
+VCClient を「main.exe cui --https false --no_cui false」で起動しないと数字が見えないかもしれません。
 
 ---
 
