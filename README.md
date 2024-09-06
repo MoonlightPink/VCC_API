@@ -11,6 +11,8 @@ https://vb-audio.com/Voicemeeter/
 
 ![Flowchart](Documents/Flowchart.png)
 
+![Rate_RTX3060Ti](Documents/Rate_RTX3060Ti.png)
+
 ---
 
 インストールとアンインストールについて
