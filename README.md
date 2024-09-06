@@ -87,11 +87,13 @@ Quest Link の設定について
 
 音が出ないときは1から順に確認してみてください。
 
-1. VCC_API.exe の画面に特段変化がないなら、VCC_API_Setup.exe の「音声入力設定: Device name」を確認してください。
-1. VCClientのコンソール画面で、Elapsed Time(sec)が変化しないなら、VCC_API_Setup.exe の「音声変換設定: IP Address」を確認してください。  
-	VCClient を「main.exe cui --https false --no_cui false」で起動しないと数字が見えないかもしれません。
-1. VCClientのコンソール画面で、Elapsed Time(sec)が変化しないなら、VCC_API_Setup.exe の「音声変換設定: IP Address」を確認してください。  
-VCClient を「main.exe cui --https false --no_cui false」で起動しないと数字が見えないかもしれません。
+1. VCC_API.exe の画面に特段変化がないときは、VCC_API_Setup.exe の「音声入力設定: Device name」を確認してください。
+1. VCClientのコンソール画面で、Elapsed Time(sec)が変化しないときは、VCC_API_Setup.exe の「音声変換設定: IP Address」を確認してください。  
+VCClient を「 main.exe cui --https false --no_cui false 」で起動しないと数字が見えないかもしれません。
+1. Voice Meeter の「VIRTUAL INPUT」のレベルゲージが動かないときは、上段の「Voice Meeter の設定について」を確認してください。
+1. VRChat内の左下のマイクが反応しない（透明のまま）ときは、VRChat の Microphone の「CURRENT DEVICE」を確認してください。  
+基本的には「Voicemeeter Out A1」または「Voicemeeter Out B1」がマイク入力になります。
+1. これでも出なかったらVCC_APIのバグだと思うので、状況を教えて頂けると助かります。
 
 ---
 
