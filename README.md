@@ -61,8 +61,8 @@ Voice Meeter の設定について
 
 ![VoiceMeeter_Settings](Documents/VoiceMeeter_Settings.png)
 
-Voice Meeter は、管理者権限で起動してください。
-右上のVBANボタンをクリックすると、VBAN設定画面が開きます。
+Voice Meeter は、管理者権限で起動してください。  
+右上のVBANボタンをクリックすると、VBAN設定画面が開きます。  
 基本的に、スクリーンショットの通りで大丈夫だと思います。
 
 ---
