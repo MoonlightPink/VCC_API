@@ -1,0 +1,154 @@
+﻿<Window x:Class="VCC_API_Setup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VCC_API_Setup"
+        mc:Ignorable="d"
+        Title="MainWindow" Loaded="Window_Loaded" Closing="Window_Closing" SizeToContent="WidthAndHeight" FontSize="16">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="16"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.RowSpan="9" Grid.ColumnSpan="5" Stroke="Black"/>
+
+            <Label Content="音声入力設定 (WASAPI)" Grid.ColumnSpan="5" VerticalAlignment="Top"/>
+
+            <Label Content="Chunk size" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+            <ComboBox x:Name="AudioIn_ChunkSecs" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" ToolTip="音声処理単位時間指定（0.05秒未満にはできません）&#10;この数値が最も大きく遅延に影響します。&#10;小さい方が遅延が少なくなりますが、小さくしすぎてGPUが足りなくなると、逆に遅延が大きくなります。&#10;RTX3060Tiで0.25秒位、RTX4070Superで0.15秒位が最小です。"/>
+            <Label Content="秒" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"/>
+
+            <Label Content="Device name" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+            <ComboBox x:Name="AudioIn_DeviceName" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" ToolTip="音声入力デバイス指定&#10;個人的には Oculus Virtual Audio Device が、VRChat向きかなと思います。"/>
+            <Label Content="" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center"/>
+
+            <Label Content="Sample rate" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
+            <ComboBox x:Name="AudioIn_SampleRate" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" ToolTip="音声入力周波数指定&#10;16000Hz以外では動作確認していません。"/>
+            <Label Content="Hz" Grid.Row="5" Grid.Column="3" VerticalAlignment="Center"/>
+
+            <Label Content="Threshold level" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center"/>
+            <ComboBox x:Name="AudioIn_ThresholdLevel" Grid.Row="7" Grid.Column="2" VerticalAlignment="Center" ToolTip="音声入力の無音判定レベル指定&#10;指定レベル以下が3秒間続くと蓄積遅延リセットします。&#10;指定レベル以下が1分間続くと変換処理を一時停止します。&#10;パソコン用マイク使用時は0.1くらいで使用していますが、&#10;Questマイク使用時は0.01くらいでも大丈夫でした。"/>
+            <Label Content="" Grid.Row="7" Grid.Column="3" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="16"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.RowSpan="7" Grid.ColumnSpan="5" Stroke="Black"/>
+
+            <Label Content="音声変換設定 (VCClient)" Grid.ColumnSpan="5" VerticalAlignment="Top"/>
+
+            <Label Content="IP Address" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="AudioConvert_Addr" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" ToolTip="VCClientのIPアドレス設定&#10;2PC構成の時は、IPアドレスを調べて入力してください。&#10;1PC構成の時は 127.0.0.1 でOKです。"/>
+            <Label Content="" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"/>
+
+            <Label Content="Port num" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="AudioConvert_Port" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" ToolTip="VCClientのポート指定&#10;おそらく18000番以外に設定することは無いと思います。"/>
+            <Label Content="番" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center"/>
+
+            <Label Content="Protocol" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
+            <ComboBox x:Name="AudioConvert_Protocol" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" ToolTip="VCClientの通信プロトコル指定&#10;sio: 新方式（socket.io/webstream）です。&#10;rest: 従来の方式（REST API）です。"/>
+            <Label Content="" Grid.Row="5" Grid.Column="3" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="16"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="16"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.RowSpan="9" Grid.ColumnSpan="5" Stroke="Black"/>
+
+            <Label Content="音声出力設定 (VoiceMeeter/VBAN)" Grid.ColumnSpan="5" VerticalAlignment="Top"/>
+
+            <Label Content="Sample rate" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+            <ComboBox x:Name="AudioOut_SampleRate" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" ToolTip="音声出力周波数指定&#10;48000Hz以外では動作確認していません。"/>
+            <Label Content="Hz" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"/>
+
+            <Label Content="IP Address" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="VBAN_Addr" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" ToolTip="VBANのIPアドレス設定&#10;おそらく 127.0.0.1 以外に設定することは無いと思います。"/>
+            <Label Content="" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center"/>
+
+            <Label Content="Port num" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="VBAN_Port" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" ToolTip="VBANのポート指定&#10;おそらく6980番以外に設定することは無いと思います。"/>
+            <Label Content="番" Grid.Row="5" Grid.Column="3" VerticalAlignment="Center"/>
+
+            <Label Content="Stream name" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="VBAN_StreamName" Grid.Row="7" Grid.Column="2" VerticalAlignment="Center" ToolTip="VBANのストリーム名指定&#10;自由に設定できますが、 VCC stream のままが無難です。"/>
+            <Label Content="" Grid.Row="7" Grid.Column="3" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="16"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="各設定項目にマウスカーソルを合わせると、&#10;説明ツールチップが表示されます。" Grid.Row="1" Grid.Column="1"/>
+            <Button x:Name="SaveAndExitBtn" Content="変更を保存して閉じる" Padding="4" Margin="4" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="SaveAndExitBtn_Click"/>
+            <Button x:Name="WithoutSaveAndExitBtn" Content="変更を破棄して閉じる" Padding="4" Margin="4" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="WithoutSaveAndExitBtn_Click"/>
+            <Button x:Name="VCClientBenchmarkBtn" Content="VCClientのベンチマーク" Padding="4" Margin="4" Grid.Row="4" Grid.Column="1" Click="VCClientBenchmarkBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,60 @@
+9/6/2024 3:17:42 AM ベンチマークの前準備をしています。
+9/6/2024 3:17:43 AM VCClient settings.
+hello response from w-okada. [Hello World! VCClient gives a cute voice to you!]
+current_slot_index: 6
+extra_frame_sec: 10
+device_id=0 NVIDIA GeForce RTX 3060 Ti 7.999GB CUDA8.6
+voice_changer_type: RVC
+name: 凛音エル 3_e700
+description: RinneElu3_e700_s63000
+credit: 
+terms_of_use_url: https://dennotenshi.booth.pm/items/5475738
+is_onnx: False
+inferencer_type: pyTorchRVCv2
+sample_rate: 48000
+version: v2
+9/6/2024 3:17:46 AM ベンチマークを開始しました。
+Chunk size: 0.05秒, GPU使用率: (最小=353%) (平均=365%) (最大=377%)
+Chunk size: 0.06秒, GPU使用率: (最小=316%) (平均=320%) (最大=323%)
+Chunk size: 0.07秒, GPU使用率: (最小=237%) (平均=255%) (最大=266%)
+Chunk size: 0.08秒, GPU使用率: (最小=202%) (平均=212%) (最大=217%)
+Chunk size: 0.09秒, GPU使用率: (最小=203%) (平均=210%) (最大=220%)
+Chunk size: 0.10秒, GPU使用率: (最小=163%) (平均=175%) (最大=193%)
+Chunk size: 0.11秒, GPU使用率: (最小=148%) (平均=151%) (最大=152%)
+Chunk size: 0.12秒, GPU使用率: (最小=139%) (平均=141%) (最大=143%)
+Chunk size: 0.13秒, GPU使用率: (最小=124%) (平均=129%) (最大=132%)
+Chunk size: 0.14秒, GPU使用率: (最小=119%) (平均=121%) (最大=125%)
+Chunk size: 0.15秒, GPU使用率: (最小=116%) (平均=117%) (最大=119%)
+Chunk size: 0.16秒, GPU使用率: (最小=101%) (平均=105%) (最大=111%)
+Chunk size: 0.17秒, GPU使用率: (最小=99%) (平均=100%) (最大=100%)
+Chunk size: 0.18秒, GPU使用率: (最小=95%) (平均=97%) (最大=99%)
+Chunk size: 0.19秒, GPU使用率: (最小=93%) (平均=95%) (最大=98%)
+Chunk size: 0.20秒, GPU使用率: (最小=87%) (平均=91%) (最大=96%)
+Chunk size: 0.21秒, GPU使用率: (最小=76%) (平均=83%) (最大=92%)
+Chunk size: 0.22秒, GPU使用率: (最小=76%) (平均=78%) (最大=80%)
+Chunk size: 0.23秒, GPU使用率: (最小=79%) (平均=80%) (最大=81%)
+Chunk size: 0.24秒, GPU使用率: (最小=70%) (平均=73%) (最大=77%)
+Chunk size: 0.25秒, GPU使用率: (最小=64%) (平均=68%) (最大=70%)
+Chunk size: 0.26秒, GPU使用率: (最小=69%) (平均=76%) (最大=87%)
+Chunk size: 0.27秒, GPU使用率: (最小=63%) (平均=65%) (最大=69%)
+Chunk size: 0.28秒, GPU使用率: (最小=66%) (平均=66%) (最大=67%)
+Chunk size: 0.29秒, GPU使用率: (最小=64%) (平均=66%) (最大=70%)
+Chunk size: 0.30秒, GPU使用率: (最小=57%) (平均=59%) (最大=61%)
+Chunk size: 0.32秒, GPU使用率: (最小=55%) (平均=58%) (最大=60%)
+Chunk size: 0.34秒, GPU使用率: (最小=56%) (平均=57%) (最大=57%)
+Chunk size: 0.36秒, GPU使用率: (最小=48%) (平均=51%) (最大=53%)
+Chunk size: 0.38秒, GPU使用率: (最小=46%) (平均=50%) (最大=53%)
+Chunk size: 0.40秒, GPU使用率: (最小=48%) (平均=50%) (最大=55%)
+Chunk size: 0.42秒, GPU使用率: (最小=46%) (平均=47%) (最大=48%)
+Chunk size: 0.44秒, GPU使用率: (最小=44%) (平均=47%) (最大=49%)
+Chunk size: 0.46秒, GPU使用率: (最小=42%) (平均=48%) (最大=59%)
+Chunk size: 0.48秒, GPU使用率: (最小=38%) (平均=39%) (最大=41%)
+Chunk size: 0.50秒, GPU使用率: (最小=38%) (平均=38%) (最大=39%)
+Chunk size: 0.55秒, GPU使用率: (最小=40%) (平均=47%) (最大=55%)
+Chunk size: 0.60秒, GPU使用率: (最小=39%) (平均=39%) (最大=40%)
+Chunk size: 0.65秒, GPU使用率: (最小=33%) (平均=34%) (最大=35%)
+Chunk size: 0.70秒, GPU使用率: (最小=32%) (平均=32%) (最大=33%)
+Chunk size: 0.80秒, GPU使用率: (最小=28%) (平均=29%) (最大=30%)
+Chunk size: 0.90秒, GPU使用率: (最小=26%) (平均=27%) (最大=28%)
+Chunk size: 1.00秒, GPU使用率: (最小=25%) (平均=26%) (最大=27%)
+9/6/2024 3:19:21 AM ベンチマークを終了しました。
