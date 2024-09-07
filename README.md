@@ -103,6 +103,12 @@ VCClient を「 main.exe cui --https false --no_cui false 」で起動しない�
 
 ---
 
+既知の問題
+
+RVCv1モデルが読み込めない問題を修正中です。
+
+---
+
 履歴
 
 2024/09/06 初版
