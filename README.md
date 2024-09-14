@@ -13,8 +13,8 @@ https://vb-audio.com/Voicemeeter/
 
 ![Rate_RTX3060Ti](Documents/Rate_RTX3060Ti.png)
 
-YouTube VRChat と VCClient の、AIボイチェン遅延時間の聞き比べ
-[![YouTube VRChat と VCClient の、AIボイチェン遅延時間の聞き比べ](http://img.youtube.com/vi/GGrnsCCDLhU/0.jpg)](https://www.youtube.com/watch?v=GGrnsCCDLhU)
+VRChat と VCClient の、AIボイチェン遅延時間の聞き比べ （YouTube外部リンク）
+[![VRChat と VCClient の、AIボイチェン遅延時間の聞き比べ （YouTube外部リンク）](http://img.youtube.com/vi/GGrnsCCDLhU/0.jpg)](https://www.youtube.com/watch?v=GGrnsCCDLhU)
 
 ---
 
