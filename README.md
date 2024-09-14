@@ -13,6 +13,8 @@ https://vb-audio.com/Voicemeeter/
 
 ![Rate_RTX3060Ti](Documents/Rate_RTX3060Ti.png)
 
+![YouTube 遅延聞き比べ](https://www.youtube.com/watch?v=GGrnsCCDLhU)
+
 ---
 
 インストールとアンインストールについて
