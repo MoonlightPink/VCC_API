@@ -3,6 +3,8 @@
 ハードウェアインターフェースを使わずに、VCClient と Voice Meeter を使って、できるだけ低遅延で可愛い声になるためのサポートアプリです。  
 1PC構成でも利用可能ですが、主に2PC構成を想定しています。
 
+主にMetaQuestを想定していますが、PICO 4 Ultra でも動作しました。音声入力デバイスを "Microphone (PicoStreamingMicrophone)" にしてください。
+
 VCClient v.2.0.55-alpha以降  
 https://github.com/w-okada/voice-changer/tree/v.2
 
