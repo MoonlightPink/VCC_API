@@ -104,6 +104,6 @@ VCClient を「 main.exe cui --https false --no_cui false 」で起動しない�
 
 履歴
 
-2024/09/06 初版
-2025/04/13 CPU負荷軽減とプチノイズ対策と最新VCClinet対応。充分安定を確認できたのでSocketIOモード専用にしました。
+2024/09/06 初版  
+2025/04/13 CPU負荷軽減とプチノイズ対策と最新VCClinet対応。充分安定を確認できたのでSocketIOモード専用にしました。  
 
