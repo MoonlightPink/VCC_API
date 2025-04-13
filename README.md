@@ -7,7 +7,7 @@
 
 主にMetaQuestを想定していますが、PICO 4 Ultra でも動作しました。音声入力デバイスを "Microphone (PicoStreamingMicrophone)" にしてください。
 
-VCClient v.2.0.76-beta以降  
+VCClient v.2.0.73-beta以降  
 https://github.com/w-okada/voice-changer/tree/v.2
 
 Voicemeeterは、VoicemeeterでもBananaでもPotatoでも、VBANが使えればどれでも使用可能です。エフェクト等を使わないならVoiceMeeterが一番シンプルでおすすめです。（Virtual Audio Cable不可）  
