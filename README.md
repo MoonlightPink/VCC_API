@@ -5,10 +5,10 @@
 
 主にMetaQuestを想定していますが、PICO 4 Ultra でも動作しました。音声入力デバイスを "Microphone (PicoStreamingMicrophone)" にしてください。
 
-VCClient v.2.0.55-alpha以降  
+VCClient v.2.0.76-beta以降  
 https://github.com/w-okada/voice-changer/tree/v.2
 
-Voicemeeterは、VoicemeeterでもBananaでもPotatoでも、VBANが使えればどれでも使用可能です。エフェクト等を使わないならVoicemeeterが一番シンプルでおすすめです。（Virtual Audio Cable不可）  
+Voicemeeterは、VoicemeeterでもBananaでもPotatoでも、VBANが使えればどれでも使用可能です。エフェクト等を使わないならVoiceMeeterが一番シンプルでおすすめです。（Virtual Audio Cable不可）  
 https://vb-audio.com/Voicemeeter/
 
 ![Flowchart](Documents/Flowchart.png)
@@ -22,7 +22,7 @@ VRChat と VCClient の、AIボイチェン遅延時間の聞き比べ （YouTub
 
 インストールとアンインストールについて
 
-20240906_VCC_API.zip をダウンロードして展開し、VCC_API_Setup.exe で初期設定を済ませた後に、VCC_API.exe を実行してください。
+20250413_VCC_API.zip をダウンロードして展開し、VCC_API_Setup.exe で初期設定を済ませた後に、VCC_API.exe を実行してください。
 
 レジストリなどは使用していませんので、アンインストールは展開したファイルを削除するだけでOKです。
 
@@ -42,23 +42,17 @@ VCClientのベンチマークで大雑把な数値を調べることが出来ま
 
 1. 音声入力設定: Device name  
 音声入力デバイス指定  
-個人的には Oculus Virtual Audio Device が、VRChat向きかなと思います。
+Oculus Virtual Audio Device、Virtual Desktop Audio、 PicoStreamingMicrophoneなど。
 
 1. 音声入力設定: Threshold level  
 音声入力の無音判定レベル指定  
-指定レベル以下が3秒間続くと蓄積遅延リセットします。  
-指定レベル以下が1分間続くと変換処理を一時停止します。  
-パソコン用マイク使用時は0.1くらいで使用していますが、  
-Questマイク使用時は0.01くらいでも大丈夫でした。  
-喋り終わったときの蓄積遅延リセットが働く程度に小さい値にしてください。
 
 1. 音声変換設定: IP Address  
 VCClientのIPアドレス設定  
-2PC構成の時は、IPアドレスを調べて入力してください。  
+2PC構成の時は、VCClientを起動しているパソコンのIPアドレスを入力してください。  
 1PC構成の時は 127.0.0.1 でOKです。
 
 VCC_API.exe の画面に！マーク（びっくりマーク）が不定期に多数表示されたときは、プチノイズが発生していますので、チャンクサイズを大きくしてください。  
-無音判定から3秒後に蓄積遅延リセットするときにも！マークが表示されますが、元々無音状態なので問題ありません。
 
 ---
 
@@ -80,15 +74,8 @@ Voice Meeter は、管理者権限で起動してください。
 
 ---
 
-Quest Link の設定について
-
-特に設定は必要ありませんが、私はSteam版VRChatを使用していません。
-
----
-
 私が使った範囲でのTips
 
-1. WiFi接続はとても遅延が大きいです。ボイチェンを使うときだけは、Air Link や、Virtual Desktop 等を使わず、USBとLANを使った方がいいかもしれません。
 1. LAN内で他のパソコンが大量にデータ送受信すると、socket.io の遅延のばらつきが大きくなります。速いときも遅いときもあるなーと思ったら、LANカードを増設してクロス…（以下略
 1. 遅延よりもプチノイズや音飛びの方が、より会話を阻害します。チャンクサイズはギリギリを狙わない方が無難です。
 1. ボイチェンするだけ、と思うとCPUは関係なさそうですが、思ったよりもCPUパワーも影響します。i5-10400だと、RTX4070Superを若干持て余してしまう感じでした。
@@ -111,12 +98,12 @@ VCClient を「 main.exe cui --https false --no_cui false 」で起動しない�
 
 既知の問題
 
-RVCv1モデルが読み込めない問題を修正中です。  
-音楽とタイミングを合わせて歌えるように。
+今のところは特にありません。
 
 ---
 
 履歴
 
 2024/09/06 初版
+2025/04/13 CPU負荷軽減とプチノイズ対策と最新VCClinet対応。充分安定を確認できたのでSocketIOモード専用にしました。
 
