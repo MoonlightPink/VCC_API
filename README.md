@@ -1,6 +1,8 @@
 # VCC_API
 
-仮注記：VCC_APIでBeatriceV2を使う場合は、VCClient v.2.0.76-beta ではなく、VCClient v.2.0.73-beta を使用してください。
+2025/09/30 VCClientがBeatrice専用になったので、当リポジトリは終了しました。
+
+2025/04/13 VCC_APIでBeatriceV2を使う場合は、VCClient v.2.0.76-beta ではなく、VCClient v.2.0.73-beta を使用してください。
 
 ハードウェアインターフェースを使わずに、VCClient と Voice Meeter を使って、できるだけ低遅延で可愛い声になるためのサポートアプリです。  
 1PC構成でも利用可能ですが、主に2PC構成を想定しています。
